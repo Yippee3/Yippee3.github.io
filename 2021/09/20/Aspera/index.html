@@ -28,7 +28,7 @@
 <meta property="og:description" content="Aspera安装首先进入aspera官方网站，找到「IBM Aspera Connect」，进入下载页面，找到对应的Linux版本 1234567891011121314151617181920#下载wget https:&#x2F;&#x2F;d3gcli72yxqn2z.cloudfront.net&#x2F;connect_latest&#x2F;v4&#x2F;bin&#x2F;ibm-aspera-connect-3.11.2.63-linux-">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-09-20T02:53:10.540Z">
-<meta property="article:modified_time" content="2021-09-20T04:39:24.897Z">
+<meta property="article:modified_time" content="2021-09-20T05:26:25.087Z">
 <meta property="article:author" content="liuzq">
 <meta name="twitter:card" content="summary">
 
@@ -153,7 +153,7 @@
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/20/Aspera/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpeg">
       <meta itemprop="name" content="liuzq">
       <meta itemprop="description" content="All is well">
     </span>
@@ -174,7 +174,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-09-20 10:53:10 / 修改时间：12:39:24" itemprop="dateCreated datePublished" datetime="2021-09-20T10:53:10+08:00">2021-09-20</time>
+              <time title="创建时间：2021-09-20 10:53:10 / 修改时间：13:26:25" itemprop="dateCreated datePublished" datetime="2021-09-20T10:53:10+08:00">2021-09-20</time>
             </span>
 
           
@@ -190,6 +190,9 @@
       
         <h1 id="Aspera"><a href="#Aspera" class="headerlink" title="Aspera"></a>Aspera</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>首先进入<a href="https://link.zhihu.com/?target=https://www.ibm.com/products/aspera/downloads?list">aspera官方网站</a>，找到<strong>「IBM Aspera Connect」</strong>，进入下载页面，找到对应的Linux版本</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">下载</span></span><br><span class="line">wget https://d3gcli72yxqn2z.cloudfront.net/connect_latest/v4/bin/ibm-aspera-connect-3.11.2.63-linux-g2.12-64.tar.gz</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash">解压</span></span><br><span class="line">tar zvxf ibm-aspera-connect-3.11.2.63-linux-g2.12-64.tar.gz</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 解压后得到一个脚本文件，运行该脚本，即可完成自动安装</span></span><br><span class="line">./ibm-aspera-connect-3.11.2.63-linux-g2.12-64.sh</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 所有安装文件都在~/.aspera/connect目录下，添加环境变量</span></span><br><span class="line">echo &#x27;export PATH=~/.aspera/connect/bin/:$PATH&#x27; &gt;&gt; ~/.profile</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 使环境变量生效</span></span><br><span class="line">source ~/.profile</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看ascp可执行文件所在的路径，应该是：~/.aspera/connect/bin/ascp</span></span><br><span class="line">which ascp</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 看程序是否能正常运行</span></span><br><span class="line">ascp -h</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
 
 <h2 id="高速下载"><a href="#高速下载" class="headerlink" title="高速下载"></a>高速下载</h2><h3 id="1-NCBI数据下载"><a href="#1-NCBI数据下载" class="headerlink" title="1. NCBI数据下载"></a><strong>1. NCBI数据下载</strong></h3><p>NCBI中数据的下载链接通常为</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://ftp.ncbi.nlm.nih.gov/refseq/release/viral/viral.2.1.genomic.fna.gz</span><br></pre></td></tr></table></figure>
@@ -234,6 +237,21 @@
     
     
     
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="liuzq 微信支付">
+        <p>微信支付</p>
+      </div>
+
+  </div>
+</div>
+
 
       <footer class="post-footer">
 
@@ -311,6 +329,8 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="liuzq"
+      src="/images/avatar.jpeg">
   <p class="site-author-name" itemprop="name">liuzq</p>
   <div class="site-description" itemprop="description">All is well</div>
 </div>
@@ -346,7 +366,7 @@
 
 <div class="copyright">
   
-  &copy; 
+  &copy; Mon Sep 20 2021 08:00:00 GMT+0800 (中国标准时间) – 
   <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>

@@ -153,7 +153,7 @@
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/20/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpeg">
       <meta itemprop="name" content="liuzq">
       <meta itemprop="description" content="All is well">
     </span>
@@ -195,6 +195,21 @@
     
     
     
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="liuzq 微信支付">
+        <p>微信支付</p>
+      </div>
+
+  </div>
+</div>
+
 
       <footer class="post-footer">
 
@@ -271,6 +286,8 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="liuzq"
+      src="/images/avatar.jpeg">
   <p class="site-author-name" itemprop="name">liuzq</p>
   <div class="site-description" itemprop="description">All is well</div>
 </div>
@@ -306,7 +323,7 @@
 
 <div class="copyright">
   
-  &copy; 
+  &copy; Mon Sep 20 2021 08:00:00 GMT+0800 (中国标准时间) – 
   <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
