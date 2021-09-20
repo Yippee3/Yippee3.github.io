@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"liuzqnb.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="dplyr包数据准备 1234library(hflights)library(dplyr)data(&quot;hflights&quot;,package &#x3D; &quot;hflights&quot;)hflights_df&lt;-tbl_df(hflights)  $filter选择列 按给定的逻辑判断筛选出符合要求的子数据集 除了代码简洁外, 还支持对同一对象的任意个条件组合, （表">
+  <meta name="description" content="dplyr包dplyr是R语言的数据分析包，类似于python中的pandas，能对dataframe类型的数据做很方便的数据处理和分析操作。常用的管道符 %&gt;% 在dplyr包中，符号左侧表示数据的输入，右侧表示下游数据处理环节。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="R package：dplyr">
 <meta property="og:url" content="http://liuzqnb.com/2021/09/20/dplyr%E5%8C%85/index.html">
 <meta property="og:site_name" content="刘某人de小破站">
-<meta property="og:description" content="dplyr包数据准备 1234library(hflights)library(dplyr)data(&quot;hflights&quot;,package &#x3D; &quot;hflights&quot;)hflights_df&lt;-tbl_df(hflights)  $filter选择列 按给定的逻辑判断筛选出符合要求的子数据集 除了代码简洁外, 还支持对同一对象的任意个条件组合, （表">
+<meta property="og:description" content="dplyr包dplyr是R语言的数据分析包，类似于python中的pandas，能对dataframe类型的数据做很方便的数据处理和分析操作。常用的管道符 %&gt;% 在dplyr包中，符号左侧表示数据的输入，右侧表示下游数据处理环节。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-09-20T08:17:00.986Z">
-<meta property="article:modified_time" content="2021-09-20T08:16:34.906Z">
+<meta property="article:modified_time" content="2021-09-20T08:25:00.678Z">
 <meta property="article:author" content="liuzq">
 <meta name="twitter:card" content="summary">
 
@@ -174,7 +174,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-09-20 16:17:00 / 修改时间：16:16:34" itemprop="dateCreated datePublished" datetime="2021-09-20T16:17:00+08:00">2021-09-20</time>
+              <time title="创建时间：2021-09-20 16:17:00 / 修改时间：16:25:00" itemprop="dateCreated datePublished" datetime="2021-09-20T16:17:00+08:00">2021-09-20</time>
             </span>
 
           
@@ -211,7 +211,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.4k</span>
+              <span>2.5k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -230,9 +230,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <span id="more"></span>
-
-<h1 id="dplyr包"><a href="#dplyr包" class="headerlink" title="dplyr包"></a>dplyr包</h1><p><strong>数据准备</strong></p>
+        <h1 id="dplyr包"><a href="#dplyr包" class="headerlink" title="dplyr包"></a>dplyr包</h1><p>dplyr是R语言的数据分析包，类似于python中的pandas，能对dataframe类型的数据做很方便的数据处理和分析操作。常用的管道符 %&gt;% 在dplyr包中，符号左侧表示数据的输入，右侧表示下游数据处理环节。</p>
+<span id="more"></span>
+<p><strong>数据准备</strong></p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">library(hflights)</span><br><span class="line">library(dplyr)</span><br><span class="line">data(<span class="string">&quot;hflights&quot;</span>,package = <span class="string">&quot;hflights&quot;</span>)</span><br><span class="line">hflights_df&lt;-tbl_df(hflights)</span><br></pre></td></tr></table></figure>
 
 <p><strong>$filter选择列</strong></p>
