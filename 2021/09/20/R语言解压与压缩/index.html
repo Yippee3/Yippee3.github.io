@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>Hello World | 刘某人de小破站</title>
+  <title>刘某人de小破站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Welcome to 刘某人de小破站!">
+  <meta name="description" content="R语言解压与压缩.zip12zip()#压缩unzip()#解压缩  .tar12tar()untar()  .gz.bz212345678#直接解压library(R.utils)gunzip(&quot;file.gz&quot;, remove &#x3D; &#96;TRUE&#96;)bunzip2(&quot;file.bz2&quot;, remove &#x3D; &#96;TRUE&#96;)#remove是否保留原文件#直接读取">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://example.com/2021/09/20/hello-world/index.html">
+<meta property="og:title" content="刘某人de小破站">
+<meta property="og:url" content="http://example.com/2021/09/20/R%E8%AF%AD%E8%A8%80%E8%A7%A3%E5%8E%8B%E4%B8%8E%E5%8E%8B%E7%BC%A9/index.html">
 <meta property="og:site_name" content="刘某人de小破站">
-<meta property="og:description" content="Welcome to 刘某人de小破站!">
+<meta property="og:description" content="R语言解压与压缩.zip12zip()#压缩unzip()#解压缩  .tar12tar()untar()  .gz.bz212345678#直接解压library(R.utils)gunzip(&quot;file.gz&quot;, remove &#x3D; &#96;TRUE&#96;)bunzip2(&quot;file.bz2&quot;, remove &#x3D; &#96;TRUE&#96;)#remove是否保留原文件#直接读取">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-09-20T01:17:49.097Z">
-<meta property="article:modified_time" content="2021-09-20T02:45:56.653Z">
+<meta property="article:published_time" content="2021-09-20T02:54:28.037Z">
+<meta property="article:modified_time" content="2021-05-04T13:32:55.000Z">
 <meta property="article:author" content="liuzq">
 <meta name="twitter:card" content="summary">
   
@@ -73,34 +73,29 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-R语言解压与压缩" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/09/20/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2021-09-20T01:17:49.097Z" itemprop="datePublished">2021-09-20</time>
+    <a href="/2021/09/20/R%E8%AF%AD%E8%A8%80%E8%A7%A3%E5%8E%8B%E4%B8%8E%E5%8E%8B%E7%BC%A9/" class="article-date">
+  <time class="dt-published" datetime="2021-09-20T02:54:28.037Z" itemprop="datePublished">2021-09-20</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      Hello World
-    </h1>
-  
-
-      </header>
-    
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://liuzqnb.com/">刘某人de小破站</a>! </p>
+        <h1 id="R语言解压与压缩"><a href="#R语言解压与压缩" class="headerlink" title="R语言解压与压缩"></a>R语言解压与压缩</h1><h2 id="zip"><a href="#zip" class="headerlink" title=".zip"></a>.zip</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">zip()#压缩</span><br><span class="line">unzip()#解压缩</span><br></pre></td></tr></table></figure>
+
+<h2 id="tar"><a href="#tar" class="headerlink" title=".tar"></a>.tar</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar()</span><br><span class="line">untar()</span><br></pre></td></tr></table></figure>
+
+<h2 id="gz-bz2"><a href="#gz-bz2" class="headerlink" title=".gz.bz2"></a>.gz.bz2</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#直接解压</span></span><br><span class="line">library(R.utils)</span><br><span class="line">gunzip(<span class="string">&quot;file.gz&quot;</span>, remove = `TRUE`)</span><br><span class="line">bunzip2(<span class="string">&quot;file.bz2&quot;</span>, remove = `TRUE`)<span class="comment">#remove是否保留原文件</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#直接读取</span></span><br><span class="line">dat &lt;- read.table(<span class="string">&quot;file.gz&quot;</span>)<span class="comment">#部分会有问题</span></span><br><span class="line">dat &lt;- read.table(gzfile(<span class="string">&quot;file.gz&quot;</span>), header = <span class="built_in">F</span>)  </span><br></pre></td></tr></table></figure>
+
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/09/20/hello-world/" data-id="ckts1txpu0000kcvlgb9hhyw7" data-title="Hello World" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/09/20/R%E8%AF%AD%E8%A8%80%E8%A7%A3%E5%8E%8B%E4%B8%8E%E5%8E%8B%E7%BC%A9/" data-id="ckts23ax00001fwvl5rpx5cnh" data-title="" class="article-share-link">分享</a>
       
       
       
@@ -110,7 +105,7 @@
     
 <nav id="article-nav">
   
-    <a href="/2021/09/20/Aspera/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/09/20/sartoolkit%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">前一篇</strong>
       <div class="article-nav-title">
         
@@ -119,6 +114,11 @@
       </div>
     </a>
   
+  
+    <a href="/2021/09/20/R-%E7%BC%BA%E5%A4%B1%E5%80%BC%E5%88%A4%E6%96%AD%E4%BB%A5%E5%8F%8A%E5%A4%84%E7%90%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title"></div>
+    </a>
   
 </nav>
 

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>刘某人de小破站</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="R-缺失值判断以及处理#举例1：向量类型判断缺失值is.na和缺失值的填补which 12345678library(&amp;#x27;visdat&amp;#x27;)library(&amp;#x27;ggplot2&amp;#x27;)msleepclass(msleep)vis_dat(msleep)vis_miss(msleep)    判断缺失值所在行并返回行号 123missing&#x3D;which(is.na(df_">
+<meta property="og:type" content="article">
+<meta property="og:title" content="刘某人de小破站">
+<meta property="og:url" content="http://example.com/2021/09/20/R-%E7%BC%BA%E5%A4%B1%E5%80%BC%E5%88%A4%E6%96%AD%E4%BB%A5%E5%8F%8A%E5%A4%84%E7%90%86/index.html">
+<meta property="og:site_name" content="刘某人de小破站">
+<meta property="og:description" content="R-缺失值判断以及处理#举例1：向量类型判断缺失值is.na和缺失值的填补which 12345678library(&amp;#x27;visdat&amp;#x27;)library(&amp;#x27;ggplot2&amp;#x27;)msleepclass(msleep)vis_dat(msleep)vis_miss(msleep)    判断缺失值所在行并返回行号 123missing&#x3D;which(is.na(df_">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-09-20T02:54:20.194Z">
+<meta property="article:modified_time" content="2021-09-20T02:54:17.563Z">
+<meta property="article:author" content="liuzq">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="刘某人de小破站" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">刘某人de小破站</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-R-缺失值判断以及处理" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/09/20/R-%E7%BC%BA%E5%A4%B1%E5%80%BC%E5%88%A4%E6%96%AD%E4%BB%A5%E5%8F%8A%E5%A4%84%E7%90%86/" class="article-date">
+  <time class="dt-published" datetime="2021-09-20T02:54:20.194Z" itemprop="datePublished">2021-09-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="R-缺失值判断以及处理"><a href="#R-缺失值判断以及处理" class="headerlink" title="R-缺失值判断以及处理"></a>R-缺失值判断以及处理</h1><p>#举例1：向量类型判断缺失值is.na和缺失值的填补which</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">library(<span class="string">&#x27;visdat&#x27;</span>)</span><br><span class="line">library(<span class="string">&#x27;ggplot2&#x27;</span>)</span><br><span class="line"></span><br><span class="line">msleep</span><br><span class="line"><span class="built_in">class</span>(msleep)</span><br><span class="line">vis_dat(msleep)</span><br><span class="line">vis_miss(msleep)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>判断缺失值所在行并返回行号</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">missing</span>=which(<span class="built_in">is.na</span>(df_num), arr.ind=<span class="built_in">T</span>)</span><br><span class="line"><span class="built_in">missing</span>[,<span class="number">2</span>]=<span class="built_in">names</span>(df_num[,<span class="built_in">missing</span>[,<span class="number">2</span>]])</span><br><span class="line"><span class="built_in">missing</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">is.na</span>(x)  <span class="comment">#返回一个逻辑向量，TRUE为缺失值，FALSE为非缺失值</span></span><br><span class="line"></span><br><span class="line">table(<span class="built_in">is.na</span>(x))  <span class="comment">#统计分类个数</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">sum</span>(x)  <span class="comment">#当向量存在缺失值的时候统计结果也是缺失值</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">sum</span>(x,na.rm = <span class="literal">TRUE</span>)  <span class="comment">#很多函数里都有na.rm=TRUE参数，此参数可以在运算时移除缺失值</span></span><br><span class="line"></span><br><span class="line">(x[which(<span class="built_in">is.na</span>(x))]</span><br></pre></td></tr></table></figure>
+
+<p>#举例2：数据框类型判断缺失值is.na、缺失值的填补which、缺失值所在行的删除na.omit</p>
+<p>(test</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">is.na</span>(test)  <span class="comment">#test中空值的判断</span></span><br><span class="line"></span><br><span class="line">which(<span class="built_in">is.na</span>(test),arr.ind = <span class="built_in">T</span>)  <span class="comment">#arr.ind=T可以返回缺失值的相应行列坐标</span></span><br><span class="line"></span><br><span class="line">test[which(<span class="built_in">is.na</span>(test),arr.ind = <span class="built_in">T</span>)]</span><br></pre></td></tr></table></figure>
+
+<p>(test_omit</p>
+<p>#举例3：识别缺失值的基本语法汇总</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">str(airquality)</span><br><span class="line"></span><br><span class="line">complete.cases(airquality)  <span class="comment">#判断个案是否有缺失值</span></span><br><span class="line"></span><br><span class="line">airquality[complete.cases(airquality),]  <span class="comment">#列出没有缺失值的行</span></span><br><span class="line"></span><br><span class="line">nrow(airquality[complete.cases(airquality),])  <span class="comment">#计算没有缺失值的样本量</span></span><br><span class="line"></span><br><span class="line">airquality[!complete.cases(airquality),]  <span class="comment">#列出有缺失的值的行</span></span><br><span class="line"></span><br><span class="line">nrow(airquality[!complete.cases(airquality),])  <span class="comment">#计算有缺失值的样本量</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">is.na</span>(airquality$Ozone)  <span class="comment">#TRUE为缺失值，FALSE为非缺失值</span></span><br><span class="line"></span><br><span class="line">table(<span class="built_in">is.na</span>(airquality$Ozone))</span><br><span class="line"></span><br><span class="line">complete.cases(airquality$Ozone)  <span class="comment">#FALSE为缺失值，TRUE为非缺失值</span></span><br><span class="line"></span><br><span class="line">table(complete.cases(airquality$Ozone))</span><br></pre></td></tr></table></figure>
+
+<p>#可用sum()和mean()函数来获取关于缺失数据的有用信息</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sum</span>(<span class="built_in">is.na</span>(airquality$Ozone))  <span class="comment">#查看缺失值的个数</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">sum</span>(complete.cases(airquality$Ozone))  <span class="comment">#查看没有缺失值的个数</span></span><br><span class="line"></span><br><span class="line">mean(<span class="built_in">is.na</span>(airquality$Ozone))  <span class="comment">#查看缺失值的占比</span></span><br><span class="line"></span><br><span class="line">mean(<span class="built_in">is.na</span>(airquality))  <span class="comment">#查看数据集airquality中样本有缺失值的占比</span></span><br></pre></td></tr></table></figure>
+
+<p>#举例4：探索缺失值模式</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#列表缺失值探索</span></span><br><span class="line"></span><br><span class="line">library(mice)</span><br><span class="line"></span><br><span class="line">md.pattern(airquality)</span><br><span class="line"></span><br><span class="line"><span class="comment">#图形缺失值探索</span></span><br><span class="line"></span><br><span class="line">library(VIM)</span><br><span class="line"></span><br><span class="line">aggr(airquality,prop=<span class="literal">FALSE</span>,number=<span class="literal">TRUE</span>)</span><br><span class="line"></span><br><span class="line">aggr(airquality,prop=<span class="literal">TRUE</span>,number=<span class="literal">TRUE</span>) <span class="comment">#生成相同的图形，但用比例代替了计数</span></span><br><span class="line"></span><br><span class="line">aggr(airquality,prop=<span class="literal">FALSE</span>,number=<span class="literal">FALSE</span>)  <span class="comment">#选项numbers = FALSE(默认)删去数值型标签</span></span><br></pre></td></tr></table></figure>
+
+<p>#举例5：删除缺失值</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">airquality[complete.cases(airquality),] <span class="comment">#方法一：删除缺失值行</span></span><br><span class="line"></span><br><span class="line">na.omit(airquality) <span class="comment">#方法二：删除缺失值的行</span></span><br></pre></td></tr></table></figure>
+
+<p>#举例6：缺失值回归模型插补</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">newnhanes2</span><br><span class="line"></span><br><span class="line">sub</span><br><span class="line"></span><br><span class="line">datatr</span><br><span class="line"></span><br><span class="line">datatr</span><br><span class="line"></span><br><span class="line">datate</span><br><span class="line"></span><br><span class="line">datate</span><br><span class="line"></span><br><span class="line">fit</span><br><span class="line"></span><br><span class="line">newnhanes2[sub,<span class="number">4</span>]</span><br></pre></td></tr></table></figure>
+
+<p>#举例7：缺失值随机森林插补</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">library(missForest)</span><br><span class="line"></span><br><span class="line">z</span><br><span class="line"></span><br><span class="line">air.full</span><br><span class="line"></span><br><span class="line">zz</span><br><span class="line"></span><br><span class="line">nhanes2.full</span><br></pre></td></tr></table></figure>
+
+<p>#举例8：线性回归模型插补</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">mice::md.pattern(airquality)</span><br><span class="line"></span><br><span class="line">index1</span><br><span class="line"></span><br><span class="line">dput(colnames(airquality))  <span class="comment">#求出变量列名称</span></span><br><span class="line"></span><br><span class="line">Ozone_train</span><br><span class="line"></span><br><span class="line">Ozone_test</span><br><span class="line"></span><br><span class="line">fit</span><br><span class="line"></span><br><span class="line">summary(fit)</span><br><span class="line"></span><br><span class="line">airquality[index1,<span class="string">&quot;Ozone&quot;</span>]</span><br><span class="line"></span><br><span class="line">index2</span><br><span class="line"></span><br><span class="line">Solar.R_train</span><br><span class="line"></span><br><span class="line">Solar.R_test</span><br><span class="line"></span><br><span class="line">Solar.R_fit</span><br><span class="line"></span><br><span class="line">summary(Solar.R_fit)</span><br><span class="line"></span><br><span class="line">airquality[index2,<span class="string">&quot;Solar.R&quot;</span>]</span><br><span class="line"></span><br><span class="line">mice::md.pattern(airquality)</span><br><span class="line"></span><br><span class="line"><span class="comment">#knn和bag缺失值插补(利用caret包中的preProcess函数，method参数有多种方式可选)</span></span><br><span class="line"></span><br><span class="line">question</span><br><span class="line"></span><br><span class="line">question</span><br><span class="line"></span><br><span class="line">str(question)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(i <span class="keyword">in</span> <span class="number">1</span>:ncol(question))&#123;</span><br><span class="line">question[,i]</span><br><span class="line"></span><br><span class="line">&#125;  <span class="comment">#批量修改为因子类型</span></span><br><span class="line"></span><br><span class="line">str(question)</span><br></pre></td></tr></table></figure>
+
+<p>#举例9：利用KNN算法进行缺失值插补(只能对数值型变量处理)</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">question</span><br><span class="line"></span><br><span class="line">question</span><br><span class="line"></span><br><span class="line">mice::md.pattern(question)  <span class="comment">#列表缺失值探索</span></span><br><span class="line"></span><br><span class="line">library(caret)</span><br><span class="line"></span><br><span class="line">knn.model</span><br><span class="line"></span><br><span class="line">question1</span><br><span class="line"></span><br><span class="line">install.packages(<span class="string">&quot;RANN&quot;</span>)</span><br><span class="line"></span><br><span class="line">mice::md.pattern(question1)</span><br><span class="line"></span><br><span class="line">table(question1$性别)  <span class="comment">#不是之前的1和2了</span></span><br><span class="line"></span><br><span class="line">table(question$性别)</span><br></pre></td></tr></table></figure>
+
+<p>#最后结果：knn不适合处理该数据，需要做哑变量处理，再套模型</p>
+<p>#举例10：利用袋装算法进行缺失值插补(只能对数值型变量处理)</p>
+<p>question</p>
+<p>question</p>
+<p>mice::md.pattern(question) #列表缺失值探索</p>
+<p>library(caret)</p>
+<p>bag.model</p>
+<p>install.packages(“ipred”)</p>
+<p>question2</p>
+<p>mice::md.pattern(question2)  #列表缺失值探索</p>
+<p>table(question2$性别)</p>
+<p>#最后结果：bag算法不适合处理该数据<br>————————————————<br>版权声明：本文为CSDN博主「weixin_39997696」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_39997696/article/details/111860583">https://blog.csdn.net/weixin_39997696/article/details/111860583</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/09/20/R-%E7%BC%BA%E5%A4%B1%E5%80%BC%E5%88%A4%E6%96%AD%E4%BB%A5%E5%8F%8A%E5%A4%84%E7%90%86/" data-id="ckts23ax20002fwvlcpmxh4zs" data-title="" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/09/20/R%E8%AF%AD%E8%A8%80%E8%A7%A3%E5%8E%8B%E4%B8%8E%E5%8E%8B%E7%BC%A9/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/09/20/miRanda/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/09/20/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/09/20/U%E7%9B%98%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8D/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/09/20/sartoolkit%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/09/20/R%E8%AF%AD%E8%A8%80%E8%A7%A3%E5%8E%8B%E4%B8%8E%E5%8E%8B%E7%BC%A9/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/09/20/R-%E7%BC%BA%E5%A4%B1%E5%80%BC%E5%88%A4%E6%96%AD%E4%BB%A5%E5%8F%8A%E5%A4%84%E7%90%86/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 liuzq<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
