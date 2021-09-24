@@ -147,7 +147,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://liuzqnb.com/2021/09/24/GO%E5%AF%8C%E9%9B%86%E5%88%86%E6%9E%90/">
+    <link itemprop="mainEntityOfPage" href="http://liuzqnb.com/2021/09/24/enrichGO/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpeg">
@@ -161,7 +161,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/09/24/GO%E5%AF%8C%E9%9B%86%E5%88%86%E6%9E%90/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/2021/09/24/enrichGO/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta">
@@ -172,11 +172,11 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-09-24 19:48:04 / 修改时间：19:47:38" itemprop="dateCreated datePublished" datetime="2021-09-24T19:48:04+08:00">2021-09-24</time>
+              <time title="创建时间：2021-09-24 19:48:04 / 修改时间：19:51:41" itemprop="dateCreated datePublished" datetime="2021-09-24T19:48:04+08:00">2021-09-24</time>
             </span>
 
           
-            <span id="/2021/09/24/GO%E5%AF%8C%E9%9B%86%E5%88%86%E6%9E%90/" class="post-meta-item leancloud_visitors" data-flag-title="" title="阅读次数">
+            <span id="/2021/09/24/enrichGO/" class="post-meta-item leancloud_visitors" data-flag-title="" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -191,8 +191,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2021/09/24/GO%E5%AF%8C%E9%9B%86%E5%88%86%E6%9E%90/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/09/24/GO%E5%AF%8C%E9%9B%86%E5%88%86%E6%9E%90/" itemprop="commentCount"></span>
+    <a title="valine" href="/2021/09/24/enrichGO/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/09/24/enrichGO/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -222,7 +222,7 @@
 
       
           <hr>
-<h2 id="title：clusterProfiler进行GO、KEGG、GSEA富集分析"><a href="#title：clusterProfiler进行GO、KEGG、GSEA富集分析" class="headerlink" title="title：clusterProfiler进行GO、KEGG、GSEA富集分析"></a>title：clusterProfiler进行GO、KEGG、GSEA富集分析</h2><h1 id="clusterProfiler进行GO、KEGG、GSEA富集分析"><a href="#clusterProfiler进行GO、KEGG、GSEA富集分析" class="headerlink" title="clusterProfiler进行GO、KEGG、GSEA富集分析"></a>clusterProfiler进行GO、KEGG、GSEA富集分析</h1><h2 id="GO、KEGG富集"><a href="#GO、KEGG富集" class="headerlink" title="GO、KEGG富集"></a>GO、KEGG富集</h2><!---- more --->
+<h2 id="title：clusterProfiler进行富集分析"><a href="#title：clusterProfiler进行富集分析" class="headerlink" title="title：clusterProfiler进行富集分析"></a>title：clusterProfiler进行富集分析</h2><h1 id="clusterProfiler进行GO、KEGG、GSEA富集分析"><a href="#clusterProfiler进行GO、KEGG、GSEA富集分析" class="headerlink" title="clusterProfiler进行GO、KEGG、GSEA富集分析"></a>clusterProfiler进行GO、KEGG、GSEA富集分析</h1><h2 id="GO、KEGG富集"><a href="#GO、KEGG富集" class="headerlink" title="GO、KEGG富集"></a>GO、KEGG富集</h2><!--- more --->
 
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">rm(<span class="built_in">list</span> = ls())</span><br><span class="line">options(stringsAsFactors = <span class="built_in">F</span>)</span><br><span class="line">setwd(<span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#读入表达矩阵，得到差异表达基因的SYMBOL</span></span><br><span class="line">dat &lt;- all_markers_noP$Excit</span><br><span class="line">dat$SYMBOL &lt;- rownames(dat)</span><br><span class="line">deg &lt;- dat[dat$avg_log2FC &gt; log2(<span class="number">1.2</span>) | dat$avg_log2FC &lt; log2(<span class="number">5</span>/<span class="number">6</span>),]</span><br><span class="line"></span><br><span class="line"><span class="comment">##先用bitr函数转换SYMBOL为ENTREZID, 默认ENTREZID是最适合做各种分析的，具体为什么不知道</span></span><br><span class="line">library(clusterProfiler)</span><br><span class="line">library(enrichplot)</span><br><span class="line">id &lt;- bitr(deg$SYMBOL, fromType = <span class="string">&quot;SYMBOL&quot;</span>, toType = <span class="string">&quot;ENTREZID&quot;</span>, OrgDb = <span class="string">&quot;org.Hs.eg.db&quot;</span>)</span><br><span class="line"><span class="comment">#查看有没有重复</span></span><br><span class="line"><span class="built_in">length</span>(unique(id$ENTREZID))</span><br><span class="line">id$SYMBOL</span><br><span class="line">id$ENTREZID</span><br><span class="line"></span><br><span class="line"><span class="comment">##pvalue和qvalue设为1是得到全部结果，画图时可以只画top10</span></span><br><span class="line">ego_ALL &lt;- enrichGO(gene = id$SYMBOL, OrgDb = <span class="string">&quot;org.Hs.eg.db&quot;</span>,</span><br><span class="line">                   keyType = <span class="string">&quot;SYMBOL&quot;</span>, ont = <span class="string">&quot;ALL&quot;</span>, </span><br><span class="line">                   pvalueCutoff = <span class="number">1</span>, pAdjustMethod = <span class="string">&quot;fdr&quot;</span>, </span><br><span class="line">                   qvalueCutoff = <span class="number">1</span>, readable = <span class="built_in">T</span>)</span><br><span class="line"></span><br><span class="line">head(ego_ALL,<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">barplot(ego_ALL, showCategory=<span class="number">10</span>, title=<span class="string">&quot;EnrichmentGOALL&quot;</span>, split=<span class="string">&quot;ONTOLOGY&quot;</span>)  + facet_grid(ONTOLOGY~., scale=<span class="string">&quot;free&quot;</span>) </span><br><span class="line"></span><br><span class="line"><span class="comment">#导出GO富集结果</span></span><br><span class="line">ego_all_df &lt;- as.data.frame(ego_ALL)</span><br><span class="line">write.csv(ego_all_df, file = <span class="string">&quot;enrichALL.csv&quot;</span>  )</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#KEGG富集分析</span></span><br><span class="line">kk &lt;- enrichKEGG(gene = id$ENTREZID,</span><br><span class="line">                 organism = <span class="string">&#x27;hsa&#x27;</span>, <span class="comment">#KEGG可以用organism = &#x27;hsa&#x27;</span></span><br><span class="line">                 pvalueCutoff = <span class="number">1</span>, keyType = <span class="string">&quot;kegg&quot;</span>, pAdjustMethod = <span class="string">&quot;fdr&quot;</span>, qvalueCutoff = <span class="number">1</span>)</span><br><span class="line">head(kk,<span class="number">2</span>)</span><br><span class="line">dotplot(kk,title=<span class="string">&quot;Enrichment KEGG_dot&quot;</span>)</span><br><span class="line">write.csv(summary(kk),<span class="string">&quot;KEGG-enrich.csv&quot;</span>,row.names =<span class="literal">FALSE</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#如果想查看上方结果中具体通路信息，此处的genelist为name为ENTREZID的Foldchange的向量</span></span><br><span class="line">hsa04750 &lt;- pathview(gene.data = geneList,</span><br><span class="line">                     pathway.id = <span class="string">&quot;hsa04750&quot;</span>, <span class="comment">#上述结果中的hsa04750通路</span></span><br><span class="line">                     species = <span class="string">&quot;hsa&quot;</span>,</span><br><span class="line">                     limit = <span class="built_in">list</span>(gene=<span class="built_in">max</span>(<span class="built_in">abs</span>(geneList)), cpd=<span class="number">1</span>))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
