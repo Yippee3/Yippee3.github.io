@@ -20,30 +20,32 @@
     var CONFIG = {"hostname":"liuzqnb.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="All is well">
-<meta property="og:type" content="website">
+  <meta name="description" content="title：clusterProfiler进行GO、KEGG、GSEA富集分析clusterProfiler进行GO、KEGG、GSEA富集分析GO、KEGG富集  1234567891011121314151617181920212223242526272829303132333435363738394041424344454647rm(list &#x3D; ls())options(stringsA">
+<meta property="og:type" content="article">
 <meta property="og:title" content="刘某人de小破站">
-<meta property="og:url" content="http://liuzqnb.com/index.html">
+<meta property="og:url" content="http://liuzqnb.com/2021/09/24/GO%E5%AF%8C%E9%9B%86%E5%88%86%E6%9E%90/index.html">
 <meta property="og:site_name" content="刘某人de小破站">
-<meta property="og:description" content="All is well">
+<meta property="og:description" content="title：clusterProfiler进行GO、KEGG、GSEA富集分析clusterProfiler进行GO、KEGG、GSEA富集分析GO、KEGG富集  1234567891011121314151617181920212223242526272829303132333435363738394041424344454647rm(list &#x3D; ls())options(stringsA">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-09-24T11:48:04.546Z">
+<meta property="article:modified_time" content="2021-09-24T11:47:38.256Z">
 <meta property="article:author" content="liuzq">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://liuzqnb.com/">
+<link rel="canonical" href="http://liuzqnb.com/2021/09/24/GO%E5%AF%8C%E9%9B%86%E5%88%86%E6%9E%90/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>刘某人de小破站</title>
+  <title> | 刘某人de小破站</title>
   
 
 
@@ -141,9 +143,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -159,10 +162,9 @@
       <meta itemprop="name" content="刘某人de小破站">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
+        <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2021/09/24/GO%E5%AF%8C%E9%9B%86%E5%88%86%E6%9E%90/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -182,6 +184,13 @@
               </span>
               <span class="post-meta-item-text">阅读次数：</span>
               <span class="leancloud-visitors-count"></span>
+            </span>
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
             </span>
   
   <span class="post-meta-item">
@@ -221,7 +230,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <hr>
+        <hr>
 <h2 id="title：clusterProfiler进行GO、KEGG、GSEA富集分析"><a href="#title：clusterProfiler进行GO、KEGG、GSEA富集分析" class="headerlink" title="title：clusterProfiler进行GO、KEGG、GSEA富集分析"></a>title：clusterProfiler进行GO、KEGG、GSEA富集分析</h2><h1 id="clusterProfiler进行GO、KEGG、GSEA富集分析"><a href="#clusterProfiler进行GO、KEGG、GSEA富集分析" class="headerlink" title="clusterProfiler进行GO、KEGG、GSEA富集分析"></a>clusterProfiler进行GO、KEGG、GSEA富集分析</h1><h2 id="GO、KEGG富集"><a href="#GO、KEGG富集" class="headerlink" title="GO、KEGG富集"></a>GO、KEGG富集</h2><!---- more --->
 
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">rm(<span class="built_in">list</span> = ls())</span><br><span class="line">options(stringsAsFactors = <span class="built_in">F</span>)</span><br><span class="line">setwd(<span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#读入表达矩阵，得到差异表达基因的SYMBOL</span></span><br><span class="line">dat &lt;- all_markers_noP$Excit</span><br><span class="line">dat$SYMBOL &lt;- rownames(dat)</span><br><span class="line">deg &lt;- dat[dat$avg_log2FC &gt; log2(<span class="number">1.2</span>) | dat$avg_log2FC &lt; log2(<span class="number">5</span>/<span class="number">6</span>),]</span><br><span class="line"></span><br><span class="line"><span class="comment">##先用bitr函数转换SYMBOL为ENTREZID, 默认ENTREZID是最适合做各种分析的，具体为什么不知道</span></span><br><span class="line">library(clusterProfiler)</span><br><span class="line">library(enrichplot)</span><br><span class="line">id &lt;- bitr(deg$SYMBOL, fromType = <span class="string">&quot;SYMBOL&quot;</span>, toType = <span class="string">&quot;ENTREZID&quot;</span>, OrgDb = <span class="string">&quot;org.Hs.eg.db&quot;</span>)</span><br><span class="line"><span class="comment">#查看有没有重复</span></span><br><span class="line"><span class="built_in">length</span>(unique(id$ENTREZID))</span><br><span class="line">id$SYMBOL</span><br><span class="line">id$ENTREZID</span><br><span class="line"></span><br><span class="line"><span class="comment">##pvalue和qvalue设为1是得到全部结果，画图时可以只画top10</span></span><br><span class="line">ego_ALL &lt;- enrichGO(gene = id$SYMBOL, OrgDb = <span class="string">&quot;org.Hs.eg.db&quot;</span>,</span><br><span class="line">                   keyType = <span class="string">&quot;SYMBOL&quot;</span>, ont = <span class="string">&quot;ALL&quot;</span>, </span><br><span class="line">                   pvalueCutoff = <span class="number">1</span>, pAdjustMethod = <span class="string">&quot;fdr&quot;</span>, </span><br><span class="line">                   qvalueCutoff = <span class="number">1</span>, readable = <span class="built_in">T</span>)</span><br><span class="line"></span><br><span class="line">head(ego_ALL,<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">barplot(ego_ALL, showCategory=<span class="number">10</span>, title=<span class="string">&quot;EnrichmentGOALL&quot;</span>, split=<span class="string">&quot;ONTOLOGY&quot;</span>)  + facet_grid(ONTOLOGY~., scale=<span class="string">&quot;free&quot;</span>) </span><br><span class="line"></span><br><span class="line"><span class="comment">#导出GO富集结果</span></span><br><span class="line">ego_all_df &lt;- as.data.frame(ego_ALL)</span><br><span class="line">write.csv(ego_all_df, file = <span class="string">&quot;enrichALL.csv&quot;</span>  )</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#KEGG富集分析</span></span><br><span class="line">kk &lt;- enrichKEGG(gene = id$ENTREZID,</span><br><span class="line">                 organism = <span class="string">&#x27;hsa&#x27;</span>, <span class="comment">#KEGG可以用organism = &#x27;hsa&#x27;</span></span><br><span class="line">                 pvalueCutoff = <span class="number">1</span>, keyType = <span class="string">&quot;kegg&quot;</span>, pAdjustMethod = <span class="string">&quot;fdr&quot;</span>, qvalueCutoff = <span class="number">1</span>)</span><br><span class="line">head(kk,<span class="number">2</span>)</span><br><span class="line">dotplot(kk,title=<span class="string">&quot;Enrichment KEGG_dot&quot;</span>)</span><br><span class="line">write.csv(summary(kk),<span class="string">&quot;KEGG-enrich.csv&quot;</span>,row.names =<span class="literal">FALSE</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#如果想查看上方结果中具体通路信息，此处的genelist为name为ENTREZID的Foldchange的向量</span></span><br><span class="line">hsa04750 &lt;- pathview(gene.data = geneList,</span><br><span class="line">                     pathway.id = <span class="string">&quot;hsa04750&quot;</span>, <span class="comment">#上述结果中的hsa04750通路</span></span><br><span class="line">                     species = <span class="string">&quot;hsa&quot;</span>,</span><br><span class="line">                     limit = <span class="built_in">list</span>(gene=<span class="built_in">max</span>(<span class="built_in">abs</span>(geneList)), cpd=<span class="number">1</span>))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -231,525 +240,69 @@
 <h2 id="GSEA富集分析"><a href="#GSEA富集分析" class="headerlink" title="GSEA富集分析"></a>GSEA富集分析</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">rm(<span class="built_in">list</span> = ls())</span><br><span class="line">options(stringsAsFactors = <span class="built_in">F</span>)</span><br><span class="line">setwd(<span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">##GSEA输入的表达矩阵应该为全部基因的SYMBOL和Foldchange的列表，而不仅仅是差异基因</span></span><br><span class="line">dat &lt;- read.csv(file = <span class="string">&#x27;Foldchange_all_genes_Mic.csv&#x27;</span>)</span><br><span class="line"><span class="built_in">class</span>(dat)</span><br><span class="line">colnames(dat)</span><br><span class="line">colnames(dat)[<span class="number">1</span>] &lt;- <span class="string">&quot;SYMBOL&quot;</span></span><br><span class="line"></span><br><span class="line">library(clusterProfiler)</span><br><span class="line">library(enrichplot)</span><br><span class="line">library(msigdbr)   <span class="comment">#GSEA官方包</span></span><br><span class="line"></span><br><span class="line">ENTREZID &lt;- bitr(dat$SYMBOL, fromType = <span class="string">&quot;SYMBOL&quot;</span>,  toType = <span class="string">&quot;ENTREZID&quot;</span>,OrgDb = <span class="string">&quot;org.Hs.eg.db&quot;</span>)</span><br><span class="line">data &lt;- merge(dat, ENTREZID, by = <span class="string">&quot;SYMBOL&quot;</span>)</span><br><span class="line">data &lt;- data[order(data$avg_log2FC,decreasing = <span class="built_in">T</span>), ,drop = <span class="built_in">F</span>]  <span class="comment">#按foldchange降序排列</span></span><br><span class="line"></span><br><span class="line"><span class="comment">##得到以name为ENTREZID的foldchange的向量</span></span><br><span class="line">gene_list &lt;- data$avg_log2FC</span><br><span class="line"><span class="built_in">names</span>(gene_list) &lt;- data$SYMBOL</span><br><span class="line">head(gene_list)</span><br><span class="line"></span><br><span class="line"><span class="comment">##查看GSEA官方的分类信息</span></span><br><span class="line">msigdbr_species()</span><br><span class="line"><span class="comment">##在C2类下进行富集分析</span></span><br><span class="line">m_df = msigdbr(species = <span class="string">&quot;Homo sapiens&quot;</span>, category = <span class="string">&quot;C2&quot;</span>)</span><br><span class="line">head(m_df)</span><br><span class="line">geneset &lt;- as.data.frame(m_df[,<span class="built_in">c</span>(<span class="string">&#x27;gs_name&#x27;</span>,<span class="string">&#x27;entrez_gene&#x27;</span>)])</span><br><span class="line"></span><br><span class="line">aa &lt;- GSEA(gene_list, TERM2GENE = geneset,</span><br><span class="line">           minGSSize = <span class="number">1</span>,</span><br><span class="line">           pvalueCutoff = <span class="number">1</span>,</span><br><span class="line">           verbose=<span class="literal">FALSE</span>)</span><br><span class="line">aa</span><br><span class="line">gseaplot2(aa, geneSetID = <span class="number">1</span>, title = aa$Description[<span class="number">6</span>])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">##也可以自己制作gmt文件</span></span><br><span class="line"><span class="comment">#geneset &lt;- read.gmt(&quot;Ferroptosis_geneset.gmt&quot;)</span></span><br><span class="line">aa &lt;- GSEA(gene_list, TERM2GENE = geneset,</span><br><span class="line">           minGSSize = <span class="number">1</span>,</span><br><span class="line">           pvalueCutoff = <span class="number">1</span>,</span><br><span class="line">           verbose=<span class="literal">FALSE</span>)</span><br><span class="line">aa</span><br><span class="line">gseaplot2(aa,title = <span class="string">&quot;aa&quot;</span>, geneSetID = <span class="string">&quot;Ferroptosis_geneset&quot;</span>, pvalue_table = <span class="built_in">T</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
-      
     </div>
 
     
     
     
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
       
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://liuzqnb.com/2021/09/20/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="liuzq 微信支付">
+        <p>微信支付</p>
+      </div>
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-      <meta itemprop="name" content="liuzq">
-      <meta itemprop="description" content="All is well">
-    </span>
+  </div>
+</div>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="刘某人de小破站">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/09/20/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="post-title-link" itemprop="url">R语言中的数据类型</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-09-20 16:27:35 / 修改时间：16:36:23" itemprop="dateCreated datePublished" datetime="2021-09-20T16:27:35+08:00">2021-09-20</time>
-            </span>
-
-          
-            <span id="/2021/09/20/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="post-meta-item leancloud_visitors" data-flag-title="R语言中的数据类型" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2021/09/20/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/09/20/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>5.9k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>5 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>R语言用来存储数据的对象包括: 向量, 因子, 数组, 矩阵, 数据框, 时间序列 (ts)以及列表</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/09/20/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>liuzq
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://liuzqnb.com/2021/09/24/GO%E5%AF%8C%E9%9B%86%E5%88%86%E6%9E%90/" title="">http://liuzqnb.com/2021/09/24/GO富集分析/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://liuzqnb.com/2021/09/20/dplyr%E5%8C%85/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-      <meta itemprop="name" content="liuzq">
-      <meta itemprop="description" content="All is well">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="刘某人de小破站">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/09/20/dplyr%E5%8C%85/" class="post-title-link" itemprop="url">R package：dplyr</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-09-20 16:17:00 / 修改时间：16:25:00" itemprop="dateCreated datePublished" datetime="2021-09-20T16:17:00+08:00">2021-09-20</time>
-            </span>
-
-          
-            <span id="/2021/09/20/dplyr%E5%8C%85/" class="post-meta-item leancloud_visitors" data-flag-title="R package：dplyr" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2021/09/20/dplyr%E5%8C%85/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/09/20/dplyr%E5%8C%85/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.5k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="dplyr包"><a href="#dplyr包" class="headerlink" title="dplyr包"></a>dplyr包</h1><p>dplyr是R语言的数据分析包，类似于python中的pandas，能对dataframe类型的数据做很方便的数据处理和分析操作。常用的管道符 %&gt;% 在dplyr包中，符号左侧表示数据的输入，右侧表示下游数据处理环节。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/09/20/dplyr%E5%8C%85/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://liuzqnb.com/2021/09/20/ImageJ%E5%88%86%E6%9E%90%E6%A0%B8%E6%B5%86%E6%AF%94/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-      <meta itemprop="name" content="liuzq">
-      <meta itemprop="description" content="All is well">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="刘某人de小破站">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/09/20/ImageJ%E5%88%86%E6%9E%90%E6%A0%B8%E6%B5%86%E6%AF%94/" class="post-title-link" itemprop="url">ImageJ分析荧光核浆比</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-09-20 15:59:38 / 修改时间：15:59:22" itemprop="dateCreated datePublished" datetime="2021-09-20T15:59:38+08:00">2021-09-20</time>
-            </span>
-
-          
-            <span id="/2021/09/20/ImageJ%E5%88%86%E6%9E%90%E6%A0%B8%E6%B5%86%E6%AF%94/" class="post-meta-item leancloud_visitors" data-flag-title="ImageJ分析荧光核浆比" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2021/09/20/ImageJ%E5%88%86%E6%9E%90%E6%A0%B8%E6%B5%86%E6%AF%94/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/09/20/ImageJ%E5%88%86%E6%9E%90%E6%A0%B8%E6%B5%86%E6%AF%94/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>851</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="ImageJ分析荧光核浆比"><a href="#ImageJ分析荧光核浆比" class="headerlink" title="ImageJ分析荧光核浆比"></a>ImageJ分析荧光核浆比</h1><p>建议将ImageJ软件换为FIJI（ImageJ的全插件版本）</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/09/20/ImageJ%E5%88%86%E6%9E%90%E6%A0%B8%E6%B5%86%E6%AF%94/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/09/20/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" rel="prev" title="R语言中的数据类型">
+      <i class="fa fa-chevron-left"></i> R语言中的数据类型
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://liuzqnb.com/2021/09/20/Aspera/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-      <meta itemprop="name" content="liuzq">
-      <meta itemprop="description" content="All is well">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="刘某人de小破站">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/09/20/Aspera/" class="post-title-link" itemprop="url">Aspera</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-09-20 10:53:10 / 修改时间：13:39:16" itemprop="dateCreated datePublished" datetime="2021-09-20T10:53:10+08:00">2021-09-20</time>
-            </span>
-
-          
-            <span id="/2021/09/20/Aspera/" class="post-meta-item leancloud_visitors" data-flag-title="Aspera" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2021/09/20/Aspera/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/09/20/Aspera/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.6k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Aspera"><a href="#Aspera" class="headerlink" title="Aspera"></a>Aspera</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>首先进入<a href="https://link.zhihu.com/?target=https://www.ibm.com/products/aspera/downloads?list">aspera官方网站</a>，找到<strong>「IBM Aspera Connect」</strong>，进入下载页面，找到对应的Linux版本</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/09/20/Aspera/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://liuzqnb.com/2021/09/20/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-      <meta itemprop="name" content="liuzq">
-      <meta itemprop="description" content="All is well">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="刘某人de小破站">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/09/20/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-09-20 09:17:49 / 修改时间：10:45:56" itemprop="dateCreated datePublished" datetime="2021-09-20T09:17:49+08:00">2021-09-20</time>
-            </span>
-
-          
-            <span id="/2021/09/20/hello-world/" class="post-meta-item leancloud_visitors" data-flag-title="Hello World" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2021/09/20/hello-world/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/09/20/hello-world/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>18</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a href="https://liuzqnb.com/">刘某人de小破站</a>! </p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
   
 
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -796,6 +349,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#title%EF%BC%9AclusterProfiler%E8%BF%9B%E8%A1%8CGO%E3%80%81KEGG%E3%80%81GSEA%E5%AF%8C%E9%9B%86%E5%88%86%E6%9E%90"><span class="nav-number">1.</span> <span class="nav-text">title：clusterProfiler进行GO、KEGG、GSEA富集分析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#clusterProfiler%E8%BF%9B%E8%A1%8CGO%E3%80%81KEGG%E3%80%81GSEA%E5%AF%8C%E9%9B%86%E5%88%86%E6%9E%90"><span class="nav-number"></span> <span class="nav-text">clusterProfiler进行GO、KEGG、GSEA富集分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#GO%E3%80%81KEGG%E5%AF%8C%E9%9B%86"><span class="nav-number">1.</span> <span class="nav-text">GO、KEGG富集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GSEA%E5%AF%8C%E9%9B%86%E5%88%86%E6%9E%90"><span class="nav-number">2.</span> <span class="nav-text">GSEA富集分析</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
